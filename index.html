@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: black;
+    }
+
+    .container {
+        height: 100vh;
+        width: 100%;
+        /* background-color: black; */
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        background-color: white;
+        /* display: inline-block; */
+        padding: 20px;
+        font-size: 30px;
+        /* height: 200px; */
+        width: 300px;
+        border-radius: 10px;
+        font-size: larger;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    input[type='range'] {
+        display: inline-block;
+        width: 80%;
+    }
+
+    .wrapper {
+        padding: 10px;
+        font-size: 25px;
+        width: auto;
+    }
+
+    span {
+        display: inline-block;
+        text-align: center;
+        margin: 20px 0;
+        background-color: #0075FF;
+        color: #ffffff;
+        padding: 10px 30px;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        border-radius: 2px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="wrapper">
+                R <input type="range" name="red" id="red" value="0" min="0" max="255" oninput="colour()">
+            </div>
+            <div class="wrapper">
+                G <input type="range" name="green" id="green" value="0" min="0" max="255" oninput="colour()">
+            </div>
+            <div class="wrapper">
+                B <input type="range" name="blue" id="blue" value="0" min="0" max="255" oninput="colour()">
+            </div>
+
+            <span id="output">rgb(0,0,0)</span>
+        </div>
+    </div>
+
+    <script>
+        function colour() {
+            var red = document.getElementById("red").value;
+            var green = document.getElementById("green").value;
+            var blue = document.getElementById("blue").value;
+
+            document.body.style.backgroundColor = 'rgb(' + red + ',' + green + ',' + blue + ')';
+
+            document.getElementById("output").innerHTML = 'rgb(' + red + ',' + green + ',' + blue + ')';
+        }
+
+
+
+    </script>
+</body>
+
+</html>
